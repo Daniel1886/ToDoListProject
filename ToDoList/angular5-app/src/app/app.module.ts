@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
 import { ListNodeComponent } from './list-node/list-node.component';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { ListNodeComponent } from './list-node/list-node.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,9 @@
-<div>{{name}}<div>
+<div *ngIf="!expand">{{name}}</div>
+<div *ngIf="expand">
+    <form [formGroup]="newItemForm" (ngSubmit) = "addNewItem()">
+        <input formControlName="newItemName">
+        <button type="submit">Add</button> 
+    </form>
+   
+  
+</div>

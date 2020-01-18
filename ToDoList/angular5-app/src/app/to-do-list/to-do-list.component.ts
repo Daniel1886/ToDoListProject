@@ -6,10 +6,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./to-do-list.component.css']
 })
 export class ToDoListComponent implements OnInit {
-  data = ['praca' ,'cos','potem'];
+  data = [{
+    name:"potem",
+    type:""
+  },
+  {
+    name:"cos",
+    type:""
+  },
+  {
+    name:"robic",
+    type:""
+  },
+  {
+    name:"",
+    type:"expand"
+  }];
   constructor() { }
 
   ngOnInit() {
+  }
+  addNewItem(event){
+    let lastElem = this.data[this.data.length -1];
+    this.data[this.data.length -1] = event;
+    this.data.push(lastElem);
   }
 
 }

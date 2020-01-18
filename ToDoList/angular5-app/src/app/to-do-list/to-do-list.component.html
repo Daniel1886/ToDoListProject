@@ -1,6 +1,6 @@
 <p>to-do-list works!</p>
 <ul>
     <li *ngFor = "let item of data">
-        <app-list-node name = "{{item}}"></app-list-node>
+        <app-list-node name = "{{item.name}}" type="{{item.type}}" (additem) ="addNewItem($event)"></app-list-node>
     </li>
 </ul> 
