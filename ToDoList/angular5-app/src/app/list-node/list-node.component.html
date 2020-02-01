@@ -1,9 +1,22 @@
-<div *ngIf="!expand">{{name}}</div>
-<div *ngIf="expand">
-    <form [formGroup]="newItemForm" (ngSubmit) = "addNewItem()">
+<div style="display: inline;">
+    <div>{{data.name}}</div>
+    <div *ngIf = "showAdd">
+        <form [formGroup]="newChildItem" (ngSubmit) = "addNewChildItem()">
+            <input formControlName="newItemName">
+            <button type="submit">Add</button> 
+        </form> 
+    </div>
+</div>
+
+<ul>
+    <li *ngFor="let item of data.childrens; let last = last">
+        <app-list-node [showAdd] = "last" [data] = "item"></app-list-node>
+    </li>
+</ul> 
+
+<div *ngIf = "showAdd">
+    <form [formGroup]="newSibilingItem" (ngSubmit) = "addNewSibilingItem()">
         <input formControlName="newItemName">
         <button type="submit">Add</button> 
-    </form>
-   
-  
+    </form> 
 </div>
