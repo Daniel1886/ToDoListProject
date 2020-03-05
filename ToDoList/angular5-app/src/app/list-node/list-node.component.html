@@ -1,14 +1,10 @@
-<div style="display: inline;">
-    <div>{{data.name}}</div>
-    <div *ngIf = "showAdd">
-        <form [formGroup]="newChildItem" (ngSubmit) = "addNewChildItem()">
-            <input formControlName="newItemName">
-            <button type="submit">Add</button> 
-        </form> 
-    </div>
+<!-- <div *ngIf = "!showAdd" class = "header">
+    <div class ="name">{{data.name}}</div>
+    <div>
+        <button (click) = "openClose()">{{ opanContainer? '+' : '-'}}</button> 
+    </div> 
 </div>
-
-<ul>
+<ul *ngIf ="!opanContainer">
     <li *ngFor="let item of data.childrens; let last = last">
         <app-list-node [showAdd] = "last" [data] = "item"></app-list-node>
     </li>
@@ -19,4 +15,27 @@
         <input formControlName="newItemName">
         <button type="submit">Add</button> 
     </form> 
+</div> -->
+<div class="rectangle container" *ngIf ="isShowingType">
+    <div class="rectangle parent" >
+        <div class="text_container">
+            <p>Showing{{data.name}}<p>      
+        </div> 
+        <div class="expand_btn_container">
+            <button class="expand_btn" (click) = "openClose()">{{ opanContainer? '-' : '+'}}</button>            
+        </div>                 
+    </div>
+    <div *ngIf ="opanContainer">
+        <app-list-node *ngFor = "let item of data.childrens" [data] = "item" [type] = "0"></app-list-node>
+        <app-list-node [data] = "data" [type] = "1"></app-list-node>
+    </div>
+</div>
+
+<div class="rectangle container" *ngIf ="isAddingType">
+    <div class="rectangle addnew" >
+        <form [formGroup]="newSibilingItem" (ngSubmit) = "addNewSibilingItem()">
+            <input formControlName="newItemName">
+            <button type="submit">Add</button> 
+        </form> 
+    </div>
 </div>

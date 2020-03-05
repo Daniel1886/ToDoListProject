@@ -1,7 +1,3 @@
 <p>to-do-list works!</p>
-<ul>
-    <li>
-        <app-list-node [data] = "data"                       
-                       (additem) ="addNewItem($event)"></app-list-node>
-    </li>
-</ul> 
+<app-list-node *ngFor = "let item of data.childrens" [data] = "item" [type] = "0"></app-list-node>
+<app-list-node [data] ="data" [type] = "1"></app-list-node>

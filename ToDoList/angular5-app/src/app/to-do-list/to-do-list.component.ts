@@ -13,11 +13,20 @@ export class ToDoListComponent implements OnInit {
   ngOnInit() {
     let parent:NodeItem = new NodeItem();
     parent.name = "cos";
+    
     let childA:NodeItem = new NodeItem();
     childA.name ="childcosA"
     childA.parent = parent;
+
+    let childB:NodeItem = new NodeItem();
+    childB.name ="childcosA"
+    childB.parent = parent;
+
+    parent.childrens.push(childB);
     parent.childrens.push(childA);
-    this.data = parent;
+
+    this.data.childrens.push(parent);
+    console.log(this.data);
   }
 
   addNewItem(event){
