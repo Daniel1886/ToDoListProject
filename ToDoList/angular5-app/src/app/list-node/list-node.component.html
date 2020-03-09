@@ -1,23 +1,5 @@
-<!-- <div *ngIf = "!showAdd" class = "header">
-    <div class ="name">{{data.name}}</div>
-    <div>
-        <button (click) = "openClose()">{{ opanContainer? '+' : '-'}}</button> 
-    </div> 
-</div>
-<ul *ngIf ="!opanContainer">
-    <li *ngFor="let item of data.childrens; let last = last">
-        <app-list-node [showAdd] = "last" [data] = "item"></app-list-node>
-    </li>
-</ul> 
-
-<div *ngIf = "showAdd">
-    <form [formGroup]="newSibilingItem" (ngSubmit) = "addNewSibilingItem()">
-        <input formControlName="newItemName">
-        <button type="submit">Add</button> 
-    </form> 
-</div> -->
-<div class="rectangle container" *ngIf ="isShowingType">
-    <div class="rectangle parent" >
+<div class="rectangle container {{isOdd? 'odd' : ''}}" *ngIf ="isShowingType">
+    <div class="rectangle parent {{isOdd? 'odd' : ''}}" >
         <div class="text_container">
             <p>Showing{{data.name}}<p>      
         </div> 
@@ -26,15 +8,15 @@
         </div>                 
     </div>
     <div *ngIf ="opanContainer">
-        <app-list-node *ngFor = "let item of data.childrens" [data] = "item" [type] = "0"></app-list-node>
-        <app-list-node [data] = "data" [type] = "1"></app-list-node>
+        <app-list-node *ngFor = "let item of data.childrens" [data] = "item" [type] = "0" [isOdd] ="!isOdd"></app-list-node>
+        <app-list-node [data] = "data" [type] = "1" [isOdd] ="!isOdd"></app-list-node>
     </div>
 </div>
 
-<div class="rectangle container" *ngIf ="isAddingType">
-    <div class="rectangle addnew" >
-        <form [formGroup]="newSibilingItem" (ngSubmit) = "addNewSibilingItem()">
-            <input formControlName="newItemName">
+<div class="rectangle container {{isOdd? 'odd' : ''}}" *ngIf ="isAddingType">
+    <div class="rectangle addnew {{isOdd? 'odd' : ''}}" >
+        <form [formGroup]="newSibilingItem" (ngSubmit) = "addNewSibilingItem()">      
+            <textarea formControlName="newItemName" rows="4" cols="50"></textarea>
             <button type="submit">Add</button> 
         </form> 
     </div>

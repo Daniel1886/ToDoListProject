@@ -12,7 +12,7 @@ export class ListNodeComponent {
   @Input() data: NodeItem;
   @Input() showAdd: boolean;
   @Input() type: Enums.NodeListType;
-
+  @Input() isOdd: boolean;
   @Output() additem = new EventEmitter<NodeItem>();
 
   expand = false;

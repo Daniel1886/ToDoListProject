@@ -22,22 +22,50 @@ ul {
     margin-bottom: 5px;
 }
 .rectangle.parent{
-    background-color: cadetblue;
+    background-color: brown;
     border: 5px solid black;
     display: inline-block;
+}
+.rectangle.parent.odd{
+    background-color: cadetblue;
 }
 .rectangle.parent p{
    padding: 5px;
 }
 .rectangle.addnew{
-    background-color: chocolate;
+    background-color: brown;
+    border: 5px solid black;
+    display: inline-block;
+}
+.rectangle.addnew.odd{
+    background-color: cadetblue;
+}
+.rectangle.addnew textarea{
+    outline: none;
+    resize: none;
+    margin: 7px;
+    height: 80px;
+    width: 80%;
+    float: left;
+}
+.rectangle.addnew button{
+    height: 80px;
+    width: 15%;
+    font-size: 21px;
+    border: 5px solid black;
+    background-color: lightgreen;
+    color: black;
+    margin-top: 15px;
 }
 .rectangle.container{
     margin-left: 20px;
     display: table;
     border-radius: 8px;
-    border-left: 5px solid black;
+    border-left: 5px solid cadetblue;
     padding: 5px;
+}
+.rectangle.container.odd{
+    border-left: 5px solid brown;
 }
 .text_container{
     width: 85%;
